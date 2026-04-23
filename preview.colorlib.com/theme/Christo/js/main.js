@@ -157,6 +157,21 @@
     }
 
 
+
+
+    // VOID HERO SPOTLIGHT
+    var heroVoid = document.querySelector('.hero-void');
+    if (heroVoid) {
+        var moveSpotlight = function(e) {
+            var rect = heroVoid.getBoundingClientRect();
+            var x = ((e.clientX - rect.left) / rect.width) * 100;
+            var y = ((e.clientY - rect.top) / rect.height) * 100;
+            heroVoid.style.setProperty('--spot-x', x + '%');
+            heroVoid.style.setProperty('--spot-y', y + '%');
+        };
+
+        heroVoid.addEventListener('pointermove', moveSpotlight);
+    }
     //TARGETED LINK
     window.slide = new SlideNav({
         activeClass: "activeme",
